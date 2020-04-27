@@ -9,6 +9,7 @@ const xss = require("xss-clean");
 const logger = require("./middleware/logger");
 const cross = require("./middleware/cross");
 const dbURL = require("./config/keys").mongoURL;
+const User = require("./models/User");
 
 //Init app
 const app = express();
@@ -38,6 +39,23 @@ app.use(helmet());
 
 // Prevent XSS attacks
 app.use(xss());
+
+app.post("/signup", (req, res) => {
+  const newUser = new User({
+    cnic: req.body.cnic,
+    email: req.body.email,
+    password: req.body.password,
+    mobile: req.body.mobile,
+  });
+  newUser
+    .save()
+    .then((user) => {
+      res.json(user);
+      console.log(user);
+    })
+    .catch((err) => res.send(err));
+  res.status(200).send("OK");
+});
 
 //Default port for NODE app
 const PORT = process.env.PORT || 5000;
