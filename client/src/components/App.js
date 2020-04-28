@@ -1,5 +1,5 @@
 import React from 'react';
-import { Login,Signup } from './Auth';
+import { Login, Signup } from './Auth';
 
 function App() {
   return (
