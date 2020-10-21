@@ -1,2 +1,2 @@
 # FYP-Server
- Node/Express server for Admission Portal & LMS
+ Node/Express server for E commerce store.
