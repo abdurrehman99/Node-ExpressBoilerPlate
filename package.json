@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node server",
+    "start": "node server",
     "dev": "nodemon server"
   },
   "author": "AbdurRehman & Saima",
   "license": "MIT",
   "dependencies": {
-    "@material-ui/icons": "^4.9.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
@@ -23,11 +22,11 @@
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "reactstrap": "^8.6.0",
     "sequelize": "^5.22.3",
     "validator": "^13.1.17",
     "xss-clean": "^0.1.1"
+  },
+   "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }
