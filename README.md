@@ -1,2 +1,1 @@
-# FYP-Server
- Node/Express server for E commerce store.
+# NODE Express Boiler Plate
