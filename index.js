@@ -13,8 +13,8 @@ const cross = require("./middleware/cross");
 //Init app
 const app = express();
 
-//Init Express Router
-const router = express.Router();
+//User routes
+const users = require("./Routes/users");
 
 //Load env vars
 dotenv.config({ path: "./config/config.env" });
@@ -45,11 +45,11 @@ app.use(helmet());
 // Prevent XSS attacks
 app.use(xss());
 
-//Auth Route
-// router.use("/auth/user");
+//User Routes
+app.use("/users", users);
 
 //Default port for NODE app
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 //Connect to Mongo DB
 mongoose
