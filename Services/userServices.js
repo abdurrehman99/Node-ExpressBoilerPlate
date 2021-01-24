@@ -1,3 +1,3 @@
-exports.registerUser = async (req, res) => {
+exports.userServices = async (req, res) => {
   res.status(200).json({ status: "OK" });
 };
