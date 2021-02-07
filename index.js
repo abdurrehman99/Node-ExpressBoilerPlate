@@ -48,6 +48,15 @@ app.use(xss());
 //User Routes
 app.use("/users", users);
 
+//Catching undefined routes
+app.get("*", function (req, res) {
+	const { method, path } = req;
+	res.status(400).json({
+		error: "not found",
+		message: `cannot ${method} ${path}`,
+	});
+});
+
 //Default port for NODE app
 const PORT = process.env.PORT || 8080;
 
